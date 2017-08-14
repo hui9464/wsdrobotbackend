@@ -1,7 +1,19 @@
 <template name="voiceListen">
-    {{#each listenTxt}}
-    <p>{{status}}</p>
-    {{#if sayMessage}}
-    <p>{{sayMessage}}</p>
-    {{/if}} {{/each}}
+    <header>
+        {{title}}
+        <button class="test" >测试</button>
+    </header>
+
+    <ul>
+        {{#each listenTxt}}
+        <li class="voiceListen">
+            <button class="delete">&times;</button>
+            <span class="text">{{ status }} ; </span>
+            {{#if sayMessage}}
+            <span class="text" >{{ sayMessage }}</span>
+            {{/if}}
+        </li>
+        {{/each}}
+    </ul>
+
 </template>

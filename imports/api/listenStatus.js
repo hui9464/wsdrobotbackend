@@ -11,8 +11,10 @@ if (Meteor.isServer) {
     ListenStatus._ensureIndex({ msgid: 1 });
     let myLogger = require('../../server/common/log4js').log4js.getLogger('listenStatus.js');
 
-    Meteor.publish('listenStatus', () => {
-        return ListenStatus.find();
+    Meteor.publish('listenStatus', (count) => {
+        if (count == 1) {
+            return ListenStatus.find();
+        }
     });
 
     Meteor.methods({
@@ -43,7 +45,7 @@ if (Meteor.isServer) {
             } else {
                 myLogger.info(`listenStatus.updateSpeakStatus ${msgid} does not exist,insert new collection`);
                 let id = ListenStatus.insert({
-                    msgid: msgid, status: status, sayMessage: null, errorMsg: null, startTime: new Date(), endTime: null, resultID: null
+                    msgid: msgid, status: status, sayMessage: sayMessage, errorMsg: null, startTime: new Date(), endTime: null, resultID: null
                 }, (err, _id) => {
                     if (err) {
                         myLogger.error(`listenStatus.updateSpeakStatus : listenStatus.insert error : ${err.message}`);
@@ -53,7 +55,13 @@ if (Meteor.isServer) {
                     return true;
                 });
             }
-        }
+        },
+        'listenStatus.remove'(msgids) {
+            check(msgids, String);
+
+            var msgObject = ListenStatus.findOne({ "msgid": msgids });
+            ListenStatus.remove(msgObject);
+        },
     });
 
 
