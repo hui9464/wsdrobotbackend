@@ -1,17 +1,28 @@
 /* CSS declarations go here */
 
-header {
+.vdiv {
+    width: 300px;
+}
+
+.vheader {
     background: #d2edf4;
     background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
     padding: 20px 15px 15px 15px;
     position: relative;
 }
 
-li {
+.vul {
+    margin: 0;
+    padding: 0;
+    background: white;
+}
+
+.voiceListen {
     position: relative;
     list-style: none;
     padding: 6px;
     border-bottom: #eee solid 1px;
+    height: 25px;
 }
 
 .delete {
@@ -23,6 +34,7 @@ li {
     position: relative;
 }
 
-li .text {
+.text {
    margin-left: 10px; 
+   font-size: 15px;
 }
