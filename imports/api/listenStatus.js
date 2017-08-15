@@ -62,6 +62,10 @@ if (Meteor.isServer) {
             var msgObject = ListenStatus.findOne({ "msgid": msgids });
             ListenStatus.remove(msgObject);
         },
+        'listenStatus.volume'(volumes) {
+            check(volumes, Number);
+            
+        },
     });
 
 
