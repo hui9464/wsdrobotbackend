@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import '../imports/api/listenStatus';
+import '../imports/api/listenVolumes';
 
 
 Meteor.startup(() => {

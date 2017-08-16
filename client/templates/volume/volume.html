@@ -1,0 +1,11 @@
+<template name="volume">
+
+    <div class="volumeModule">
+        <header>{{title}}</header>
+        <button class="volBtn">显示音量</button>
+        {{#with listenVol}}
+            <span class="volumeText">{{ volume }}</span>
+        {{/with }}
+    </div>
+
+</template>

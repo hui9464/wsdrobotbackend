@@ -8,9 +8,11 @@ Router.route('/voiceListen',{
     loadingTemplate:'load',
     layoutTemplate:'layoutSinglePage',
     waitOn:function (){
-        return Meteor.subscribe('listenStatus', 1);
+        Meteor.subscribe('listenStatus', 1);
+        Meteor.subscribe('listenVolumes', 1);
     },
     action:function(){
-        this.render('voiceListen');
+        this.render('voiceListen', {to: 'voiceModule'});
+        this.render('volume', {to: 'volumeModule'});
     }
 });

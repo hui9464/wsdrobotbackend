@@ -14,7 +14,7 @@ if (Meteor.isServer) {
     Meteor.publish('listenStatus', (count) => {
         if (count == 1) {
             return ListenStatus.find();
-        }
+        }   
     });
 
     Meteor.methods({
@@ -61,10 +61,6 @@ if (Meteor.isServer) {
 
             var msgObject = ListenStatus.findOne({ "msgid": msgids });
             ListenStatus.remove(msgObject);
-        },
-        'listenStatus.volume'(volumes) {
-            check(volumes, Number);
-            
         },
     });
 

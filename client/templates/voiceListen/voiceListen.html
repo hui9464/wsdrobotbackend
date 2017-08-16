@@ -1,5 +1,6 @@
 <template name="voiceListen">
-    <div class="vdiv">
+
+    <div class="voiceModule">
         <header class="vheader">
             {{title}}
             <button class="test">测试</button>
@@ -9,26 +10,13 @@
             {{#each listenTxt}}
             <li class="voiceListen">
                 <button class="delete">&times;</button>
-                <span class="text">{{ status }} ; </span> {{#if sayMessage}}
-                <span class="text">{{ sayMessage }}</span> {{/if}}
+                <span class="text">{{ status }} ; </span> 
+                {{#if sayMessage}}
+                <span class="text">{{ sayMessage }}</span> 
+                {{/if}}
             </li>
             {{/each}}
         </ul>
     </div>
 
-    <!-- 代码部分begin -->
-    <div class="demo-music">
-        <div class="music">
-            <ul id="waves" class="movement">
-                <li class="li1"><span class="ani-li"></span></li>
-                <li class="li2"><span class="ani-li"></span></li>
-                <li class="li3"><span class="ani-li"></span></li>
-                <li class="li4"><span class="ani-li"></span></li>
-                <li class="li5"><span class="ani-li"></span></li>
-                <li class="li6"><span class="ani-li"></span></li>
-            </ul>
-            <div class="music-state"></div>
-        </div>
-    </div>
-    <!-- 代码部分end -->
 </template>
