@@ -21,7 +21,6 @@ if (Meteor.isServer) {
             check(volumes, Number);
 
             let result = ListenVolumes.findOne({ 'volid': volids });
-            myLogger.info('result: ' + result);
             if (result) {
                 myLogger.info(`更新数据，id： ${volids} value： ${volumes}`);
                 ListenVolumes.update({volid: volids}, {$set: {volume : volumes, createdAt: new Date()},});
