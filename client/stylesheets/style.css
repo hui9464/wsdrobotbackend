@@ -1,9 +1,25 @@
-/* CSS declarations go here */
+
+
+.left {
+    float: left;
+    width: 40%;
+    border: #eef solid 2px;
+}
+
+.right {
+    float: right;
+    width: 58%;
+    border: #eef solid 2px;
+}
 
 .voiceModule {
-    height: 400px;
-    width: 40%;
     border: #eef solid 1px;
+    margin: 2px 2px 2px 2px;
+}
+
+.volumeModule {
+    border: #eef solid 1px;
+    margin: 2px 2px 2px 2px;
 }
 
 .vheader {

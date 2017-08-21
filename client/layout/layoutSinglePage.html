@@ -5,9 +5,13 @@
     </header>
 
     <body>
-        {{> yield "voiceModule"}}
-
-        {{> yield "volumeModule"}}
+        <div class="left">
+            {{> yield "voiceModule"}} 
+            {{> yield "volumeModule"}}
+        </div>
+        <div class="right">
+            我在右边
+        </div>
     </body>
 
 </template>
