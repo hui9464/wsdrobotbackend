@@ -2,13 +2,14 @@
 
 .left {
     float: left;
-    width: 40%;
+    width: 40%; 
     border: #eef solid 2px;
 }
 
 .right {
-    float: right;
-    width: 58%;
+    
+
+    height: 100%;
     border: #eef solid 2px;
 }
 

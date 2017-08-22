@@ -7,11 +7,13 @@
     <body>
         <div class="left">
             {{> yield "voiceModule"}} 
+            
             {{> yield "volumeModule"}}
         </div>
         <div class="right">
-            我在右边
+            {{> yield "btn"}}
         </div>
+
     </body>
 
 </template>

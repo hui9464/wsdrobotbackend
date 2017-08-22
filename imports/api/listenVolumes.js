@@ -17,7 +17,7 @@ if (Meteor.isServer) {
 
     Meteor.methods({
         'listenVolume.updateVolume'(volids, volumes) {
-            check(volids, String);
+            check(volids, String);``
             check(volumes, Number);
 
             let result = ListenVolumes.findOne({ 'volid': volids });
