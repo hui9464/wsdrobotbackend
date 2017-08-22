@@ -22,5 +22,9 @@ Template.btn.events({
         var btnID = "btnStartTts";
         Meteor.call('btnStatus.update', btnID, "开始说话", 0, "1");
     },
+    'click .btnStopTts'() {
+        var btnID = "btnStopTts";
+        Meteor.call('btnStatus.update', btnID, "暂停说话", 0, "1");
+    },
 
 });
